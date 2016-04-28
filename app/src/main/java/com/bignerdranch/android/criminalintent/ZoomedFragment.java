@@ -1,5 +1,5 @@
 package com.bignerdranch.android.criminalintent;
-
+/*
 import android.app.Dialog;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -13,7 +13,7 @@ import java.io.File;
 
 /**
  * Created by nbens_000 on 4/1/2016.
- */
+
 public class ZoomedFragment extends DialogFragment{
     private static final String ARG_ZOOM = "image";
 
@@ -43,3 +43,4 @@ public class ZoomedFragment extends DialogFragment{
                 .create();
     }
 }
+*/

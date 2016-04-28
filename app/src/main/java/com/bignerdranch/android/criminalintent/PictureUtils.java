@@ -1,5 +1,5 @@
 package com.bignerdranch.android.criminalintent;
-
+/*
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -7,7 +7,7 @@ import android.graphics.Point;
 
 /**
  * Created by nbens_000 on 4/1/2016.
- */
+
 public class PictureUtils {
 
     public static Bitmap getScaledBitmap(String path, Activity activity){
@@ -43,3 +43,4 @@ public class PictureUtils {
         return BitmapFactory.decodeFile(path, options);
     }
 }
+*/

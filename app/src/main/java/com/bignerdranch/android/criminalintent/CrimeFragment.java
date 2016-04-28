@@ -115,7 +115,7 @@ public class CrimeFragment extends android.support.v4.app.Fragment{
 
 
 
-        mDateButton = (Button)v.findViewById(R.id.crime_date);
+       /* mDateButton = (Button)v.findViewById(R.id.crime_date);
         updateDate(setLongFormat(mCrime.getDate()).toString());
         mDateButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -127,6 +127,7 @@ public class CrimeFragment extends android.support.v4.app.Fragment{
                 dialog.show(manager, DIALOG_DATE);
             }
         });
+        */
 
         mSolvedCheckBox = (CheckBox)v.findViewById(R.id.crime_solved);
         mSolvedCheckBox.setChecked(mCrime.isSolved());
@@ -171,8 +172,8 @@ public class CrimeFragment extends android.support.v4.app.Fragment{
             mSuspectButton.setEnabled(false);
         }
 
-        mPhotoButton = (ImageButton) v.findViewById(R.id.crime_camera);
-        final Intent captureImage = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        // mPhotoButton = (ImageButton) v.findViewById(R.id.crime_camera);
+        /*final Intent captureImage = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 
         boolean canTakePhoto = mPhotoFile != null &&
                 captureImage.resolveActivity(packageManager) != null;
@@ -190,7 +191,9 @@ public class CrimeFragment extends android.support.v4.app.Fragment{
             }
         });
 
-        mPhotoView = (ImageView) v.findViewById(R.id.crime_photo);
+
+       mPhotoView = (ImageView) v.findViewById(R.id.crime_photo);
+
 
         ViewTreeObserver observer = mPhotoView.getViewTreeObserver();
         observer.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
@@ -200,7 +203,8 @@ public class CrimeFragment extends android.support.v4.app.Fragment{
                 mPhotoView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
             }
         });
-        //updatePhotoView();
+        */
+        /*updatePhotoView();
         mPhotoView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -211,6 +215,7 @@ public class CrimeFragment extends android.support.v4.app.Fragment{
                 }
             }
         });
+        */
 
         return v;
     }
@@ -244,7 +249,7 @@ public class CrimeFragment extends android.support.v4.app.Fragment{
         return report;
     }
 
-    private void updatePhotoView() {
+   /* private void updatePhotoView() {
         if (mPhotoFile == null || !mPhotoFile.exists()) {
             mPhotoView.setImageDrawable(null);
         } else {
@@ -253,18 +258,20 @@ public class CrimeFragment extends android.support.v4.app.Fragment{
             mPhotoView.setImageBitmap(bitmap);
         }
     }
+    */
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data){
         if (resultCode != Activity.RESULT_OK){
             return;
         }
-        if (requestCode == REQUEST_DATE){
-            Date date = (Date) data
-                    .getSerializableExtra(DatePickerFragment.EXTRA_DATE);
-            mCrime.setDate(date);
-            updateDate(mCrime.getDate().toString());
-        } else if (requestCode == REQUEST_CONTACT && data != null){
+       // if (requestCode == REQUEST_DATE){
+            //Date date = (Date) data
+                    //.getSerializableExtra(DatePickerFragment.EXTRA_DATE);
+            //mCrime.setDate(date);
+           // updateDate(mCrime.getDate().toString());
+       // }
+        else if (requestCode == REQUEST_CONTACT && data != null){
             Uri contactURI = data.getData();
             // Specify which fields you want your query to return values for
             String[] queryFields = new String[] {
@@ -289,9 +296,9 @@ public class CrimeFragment extends android.support.v4.app.Fragment{
             }finally{
                 c.close();
             }
-        } else if (requestCode == REQUEST_PHOTO) {
-            updatePhotoView();
-        }
+        } //else if (requestCode == REQUEST_PHOTO) {
+        // updatePhotoView();
+        //}
     }
 
     private String setLongFormat (Date date){

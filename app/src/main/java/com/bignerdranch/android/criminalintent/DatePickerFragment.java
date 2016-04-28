@@ -1,5 +1,5 @@
 package com.bignerdranch.android.criminalintent;
-
+/*
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.DialogFragment;
@@ -17,7 +17,7 @@ import java.util.GregorianCalendar;
 
 /**
  * Created by nbens_000 on 3/8/2016.
- */
+
 public class DatePickerFragment extends android.support.v4.app.DialogFragment {
 
     public static final String EXTRA_DATE =
@@ -80,3 +80,5 @@ public class DatePickerFragment extends android.support.v4.app.DialogFragment {
                 .onActivityResult(getTargetRequestCode(), resultCode, intent);
     }
 }
+
+*/
